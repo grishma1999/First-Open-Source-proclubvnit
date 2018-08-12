@@ -66,10 +66,30 @@ void MultMatrices()
    }
     
 }
+void scalarmult(int matrix[r][c],int k)
+{
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            matrix[i][j]*=k;
+        }
+    }
+   
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+           printf("%d",matrix[i][j]);
+        }
+    } 
+             
 
 int main(){
     //Driver Code-Do not make changes here unless too necessary
-    int option,num;
+    int option,num,k;
+    printf("enter value");
+    scanf("%d",&k);
     printf("Enter the number of choices\n");
     scanf("%d",&num);
     while(num--)
@@ -99,6 +119,9 @@ int main(){
             case POWER:
                             Power();//ask not only for matrix but also the power to which it should be raised
                             break;
+            case SCALAR:
+                            scalarmult();
+                break;
         }
 
 
